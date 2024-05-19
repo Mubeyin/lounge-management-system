@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	
+	<title>image slider</title>
+	<style>
+		*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+  .header img { width: 160px; height: 150px; margin-top:20px 10px; }
+  .header nav { display: flex; flex-direction: column; }
+  .header a { margin: 2px 0; text-decoration: none; color: teal; padding-left:30px ; }
+  .header a:hover { text-decoration: underline; }
+  
+  .header div {font-size:30px;font-family:verdana;}
+
+body{
+	background: #eaeaea ;
+	overflow: hidden ;
+	
+}
+.container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1000px;
+	height: 600px;
+	background: #f5f5f5;
+	box-shadow: 0 30px 50px #dbdbdb;
+
+}
+.container .slide .item{
+	width: 200px;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	border-radius: 20px;
+	box-shadow: 0 30px 50px #505050;
+	background-position: 50% 50%;
+	background-size: cover;
+	display:inline-block;
+	transition: 0.5s;
+}
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+	top: 20%;
+	left: 0;
+	transform: translate(0, 0);
+	border-radius: 0;
+	width: 60%;
+	height: 60%;	
+}
+.slide .item:nth-child(3){
+	left: 50%;
+}
+.slide .item:nth-child(4){
+	left: calc(50% + 220px);
+}
+.slide .item:nth-child(5){
+	left: calc(50% + 440px);
+}
+
+/*hear n=0,1,2,3,4,.....*/
+.slide .item:nth-child(n+6){
+	left: calc(50% + 660px);
+	opacity: 0;
+}
+
+.item .content{
+	position: absolute;
+	top: 50%;
+	left: 100px;
+	width: 300px;
+	text-align: left;
+	color: white;
+	transform: translate(0, -50%);
+	font-family: system-ui;
+	display: none ;
+}
+.slide .item:nth-child(2) .content{
+	display: block;
+}
+.content .name{
+	font-size: 40px;
+	text-transform: uppercase;
+	font-weight: bold;
+	opacity: 0;
+	animation: animate 1s ease-in-out 1 forwards;
+}
+.content .des{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	opacity: 0;
+	animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+.content button{
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+	animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+
+@keyframes animate{
+	from{
+		opacity: 0;
+		transform: translate(0, 100px);
+		filter: blur(0);
+	}
+	to{
+		opacity: 1;
+		transform: translate(0);
+		filter: blur(0);
+	}
+}
+	</style>
+	
+</head>
+<body>
+	<header class="header">
+  
+  <img src="./images/LOGO.png" alt="LOGO">
+
+  <nav>
+  	<h2>
+  	<a href="index.html">Home</a><br>
+    <a href="login.php">Login</a><br>
+    <a href="aboutus.html">About us</a>
+  </h2>
+  </nav>
+  
+</header>
+		<div class="container">
+			<div class="slide">
+				<div class="item" style="background-image: url(./images/bastabedabo.png);">
+					<div class="content">
+						<div class="name"> Pasta Bedabo</div>
+						<div class="des"> </div>
+						
+					</div>
+				</div>
+				<div class="item" style="background-image: url(./images/aynet1.png);">
+					<div class="content">
+						<div class="name"> Aynet</div>
+						<div class="des"></div>
+						
+					</div>
+				</div>
+				<div class="item" style="background-image: url(./images/firfir.png);">
+					<div class="content">
+						<div class="name"> Firfir </div>
+						<div class="des"> </div>
+						
+					</div>
+				</div>
+				<div class="item" style="background-image: url(./images/enk.png);">
+					<div class="content">
+						<div class="name"> Enkulal firfr</div>
+						<div class="des"> </div>
+						
+					</div>
+				</div>
+				<div class="item" style="background-image: url(./images/tibs5.png);">
+					<div class="content">
+						<div class="name"> Tibs</div>
+						<div class="des"> </div>
+						
+					</div>
+				</div>
+				<div class="item" style="background-image: url(./images/special.png);">
+					<div class="content">
+						<div class="name"> Special</div>
+						
+						<div class="des"> </div>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="button">
+				<button class="prev"><b> < </b></button>
+				<button class="next"><b> > </b></button>
+			</div>
+		</div>
+		<script>
+   window.onload = function() {
+  var quotes = document.querySelectorAll('.quotes p');
+  var currentQuote = 0;
+  var repeatCount = 0;
+  var interval = setInterval(function() {
+    quotes[currentQuote].style.display = 'none';
+    currentQuote = (currentQuote + 1) % quotes.length;
+    quotes[currentQuote].style.display = 'block';
+    repeatCount++;
+    if (repeatCount === quotes.length * 5) {
+      clearInterval(interval);
+    }
+  }, 5000); // 5 seconds delay
+};
+
+</script>
+		<script src="app.js"></script>
+</body>
+</html>
