@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="style2.css">
+<title>Responsive Homepage</title>
+<style>
+
+
+
+
+
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.section-heading {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5rem;
+  text-shadow: 0.3rem 0.3rem 0.3rem #000;
+}
+
+.section-2 {
+  width: 100%;
+  height: 100vh;
+  background-color:#EEEEEE ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rem 0;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-evenly;
+  /* padding: 0 5%; */
+}
+
+.card-wrapper {
+  perspective: 1000rem;
+}
+
+.card{
+  width: 30rem;
+ background-image: url();
+ background-repeat:no-repeat;
+  background-size:100%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1rem 1rem 1rem #000;
+  position: relative;
+  transform: rotateY(20deg) skewX(-2deg);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+.card-tea {
+  background-image: url('./images/pexels-hasanalbari-1493080-removebg-preview (1).png'); /* Path to tea image */
+}
+
+.card-coffee {
+  background-image: url('./images/download (18).jpg'); /* Path to coffee image */
+}
+
+.card-asanbusa {
+  background-image: url('./images/sanbusa-removebg-preview.png'); /* Path to asanbusa image */
+}
+
+.card-aynet {
+  background-image: url('./images/aynet1.png'); /* Path to aynet image */
+}
+
+.card-machiato {
+  background-image: url('./images/makiato-removebg-preview.png'); /* Path to machiato image */
+}
+
+.card-koker {
+  background-image: url('./images/biskut-removebg-preview.png'); /* Path to koker image */
+}
+
+.card:hover {
+  transform: rotateY(20deg) skewX(-2deg) translateY(-3rem);
+  box-shadow: 2rem 2rem 2rem #000;
+}
+
+.card::before {
+  content: "";
+  height: 100%;
+  width: 1rem;
+  background-color: #817824;
+  position: absolute;
+  top: 0;
+  left: -1rem;
+  transform: skewY(45deg);
+  transform-origin: right;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+
+.card::after {
+  content: "";
+  width: 100%;
+  height: 1rem;
+  background-color: #8f8317;
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  transform: skewX(45deg);
+  transform-origin: bottom;
+  box-shadow: -0.1rem -0.1rem 0.1rem #000;
+}
+
+.card-img {
+  width: 100%;
+}
+
+.card-name {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: #EEE;
+  margin: 2rem 0;
+  text-shadow: 0.15rem 0.15rem 0.15rem #000;
+}
+
+.card-btn {
+  width: 70%;
+  background-color: #111;
+  color: #888;
+  border-radius: 5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  box-shadow: -0.2rem -0.2rem 0.2rem #000;
+}
+
+
+
+/* New styles for the inline images */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+
+  .image-container img {
+    width: 22%; /* Adjust the width as needed */
+    margin: 1%; /* Adjust the spacing as needed */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0.5rem 0.5rem 0.5rem #000;
+  }
+</style>
+     <link rel="stylesheet" href="admin.css">
+     <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <img src="images/wculogo.jpg" alt="" style="width: 60px; height: 60px;">
+        </div>
+        
+        <div class="right-section">
+            <a class="home" href="">Home</a>
+            <a class="orders" href="">Orders</a>
+            <a class="logout" href="">Logout</a>
+            
+        </div>
+        
+            </div>
+
+
+ <!-- Section 2 -->
+        <section class="section-2">
+            <h1 class="section-heading">Lounge Service System </h1>
+            <div class="cards-container">
+                <div class="card card-tea">
+                    
+                    <h3 class="card-name ">Tea</h3>
+                    
+                </div>
+                <div class="card card-coffee">
+                    
+                    <h3 class="card-name">Coffe</h3>
+                    
+                </div>
+                <div class="card card-asanbusa">
+                   
+                    <h3 class="card-name">Asanbusa</h3>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="section-2">
+            <div class="cards-container">
+                <div class="card card-aynet">
+                   
+                    <h3 class="card-name">Aynet</h3>
+                    
+                </div>
+                <div class="card card-machiato">
+                   
+                    <h3 class="card-name">Machiato</h3>
+                    
+                </div>
+                <div class="card card-koker" >
+                   
+                    <h3 class="card-name">Koker</h3>
+                    
+                </div>
+            </div>
+  
+        </section>
+   <footer class="footer">
+    <div style="display: inline-block; margin-right: 120px;
+        
+    ">
+        <p>USEFUL Link</p>
+        <a style="color: white;"  href="">About US</a><br><br>
+        <a style="color: white;"  href="">Contact US</a><br><br>
+        <a style="color: white;"  href=""> comment</a><br><br>
+    </div>
+    <div style="display: inline-block;
+         margin-right: 100px;
+    ">
+        <p>WCU LOUNGES</p>
+        <a style="color: white;" href="">About US</a><br><br>
+        <a style="color: white;"  href="">Contact US</a><br><br>
+        <a style="color: white;"  href=""> comment</a><br><br>
+
+    </div>
+    <div style="display: inline-block;">
+  <p>Follow Us On</p>
+  <a style="color: white;" href="">Facebook</a><br><br>
+  <a style="color: white;" href="">Whatsap</a><br><br>
+  <a style="color: white;" href="">Twitter</a><br><br>
+    </div>
+ </footer>
+</body>
+</html>
